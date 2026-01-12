@@ -377,7 +377,20 @@ function scrollToMain() {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
   }, 600);
 }
+let transitionDone = false;
 
+function triggerTransition() {
+  if (transitionDone) return;
+  transitionDone = true;
+  scrollToMain();
+  document.getElementById("navbar").classList.add("show");
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    triggerTransition();
+  }
+});
    
 
 window.addEventListener("load", () => {
