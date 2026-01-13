@@ -68,6 +68,8 @@ html {
 .hero-logo {
   width: 120px;
   margin-bottom: 20px;
+  border-radius: 25px;   
+   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 .hero-content h1 {
@@ -92,7 +94,7 @@ html {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(90deg, #1e2f4f, #3b5f8a);
+  background: linear-gradient(90deg,  #2b3f5c, #0b1220);
   padding: 18px 40px;
   display: flex;
   justify-content: center;
@@ -147,7 +149,7 @@ html {
 .team-grid {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -157,6 +159,7 @@ html {
   padding: 30px 20px;
   text-align: center;
   cursor: pointer;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -181,6 +184,7 @@ html {
   color: #3b5f8a;
   font-weight: 500;
 }
+
 /* MODAL */
 .modal {
   position: fixed;
@@ -232,6 +236,7 @@ html {
   margin-top: 10px;
 }
 
+
 .badge {
   position: absolute;
   top: 20px;
@@ -259,13 +264,30 @@ html {
 }
 
 /* PATENTS */
+
 .patent-card {
-  background: #f7f9fc;
+  background: #eff6ff;
   padding: 30px;
-  border-radius: 16px;
+  border-radius: 14px;
   margin-top: 30px;
   position: relative;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.patent-card p strong {
+  color: #3b82f6;
+}
+.patent-card ul {
+  padding-left: 20px;
+}
+
+.patent-card li {
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.patent-card li::marker {
+  color: #3b82f6;
+  font-size: 1.2em;
 }
 
 .badge {
@@ -290,8 +312,11 @@ html {
 .impact {
   margin-top: 15px;
   padding: 15px;
-  background: #eef3ff;
+  background: #e5edff;
   border-left: 4px solid #2f7cf6;
+   border-radius: 8px;
+  font-size: 14px;
+  color: #1e3a8a;
 }
 /* EXPERTISE */
 .expertise-grid {
@@ -415,6 +440,14 @@ html {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.send-btn:hover {
+  background: #15803d;  /* slightly darker green */
+}
+.send-btn:active {
+  background: #12803a;   /* darker green */
+  transform: scale(0.97);
 }
 
 /* RESPONSIVE */
@@ -445,7 +478,7 @@ html {
 
 .facility-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 40px;
 }
@@ -531,7 +564,7 @@ html {
   top: 0;
   width: 100%;
   height: 730px;
-  background: linear-gradient(90deg, #1e2f4f, #3b5f8a);
+  background: linear-gradient(90deg,  #2b3f5c, #0b1220);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -542,19 +575,110 @@ html {
 
 .mini-content {
   display: flex;
+  flex-direction: column; 
   align-items: center;
   gap: 10px;
   color: white;
   font-size: 16px;
   font-weight: 500;
 }
+.mini-content h1 {
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
 
 .mini-logo {
-  height: 32px;
+   height: 620px;
+   width: 620px;
+   border-radius: 32px;   
+   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 #mini-hero.show {
   transform: translateY(0);
 }
+.section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#about p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: #374151;
+}
 
+.section h2 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section h2::after {
+  content: "";
+  width: 100%;
+  max-width: 1000px;
+  height: 2px;
+  background: #3b82f6;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+.section p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+/* 2 columns for Chemistry */
+.chemistry-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 columns for Mechanical */
+.mechanical-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 768px) {
+  .chemistry-grid,
+  .mechanical-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* FOOTER */
+.site-footer {
+  background: radial-gradient(circle at top, #2b3f5c, #0b1220); /* Same as hero */
+  color: white;
+  padding: 18px 40px;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-credit {
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .footer-credit {
+    text-align: center;
+  }
+}
 

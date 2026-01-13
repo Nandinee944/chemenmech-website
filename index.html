@@ -85,7 +85,7 @@
   <div class="patent-card">
     <div class="badge active">Active</div>
     <h3>Advanced Chemical Synthesis Process</h3>
-    <p><strong>Patent:</strong> US Patent #11,234,567 (2023)</p>
+    <p><strong>US Patent #11,234,567</strong> (2023)</p>
     <p>
       Revolutionary method for synthesizing organic compounds with 40% improved efficiency and reduced environmental impact.
     </p>
@@ -103,7 +103,7 @@
   <div class="patent-card">
     <div class="badge active">Active</div>
     <h3>Automated Quality Control System</h3>
-    <p><strong>Patent:</strong> US Patent #11,098,432 (2022)</p>
+    <p><strong> US Patent #11,098,432</strong> (2022)</p>
     <p>
       AI-powered system for real-time quality monitoring in manufacturing processes.
     </p>
@@ -121,7 +121,7 @@
   <div class="patent-card">
     <div class="badge pending">Pending</div>
     <h3>Sustainable Material Composite</h3>
-    <p><strong>Patent:</strong> Patent Pending (2024)</p>
+    <p><strong>US Patent Pending</strong> (2024)</p>
     <p>
       Novel biodegradable material composite for packaging applications with enhanced strength properties.
     </p>
@@ -195,7 +195,7 @@
     Our chemistry team combines deep theoretical knowledge with practical experience in developing innovative solutions. We specialize in creating novel compounds, optimizing processes, and ensuring scalable manufacturing while maintaining the highest standards of safety and environmental responsibility.
   </p>
 
-  <div class="expertise-grid">
+  <div class="expertise-grid chemistry-grid">
     <div class="expertise-card">
       <h3>Organic Synthesis</h3>
       <ul>
@@ -247,7 +247,7 @@
     Our mechanical engineering capabilities span from initial concept design to full-scale manufacturing. We leverage cutting-edge tools and methodologies to create robust, efficient, and manufacturable solutions that meet the highest industry standards.
   </p>
 
-  <div class="expertise-grid">
+  <div class="expertise-grid mechanical-grid">
     <div class="expertise-card">
       <h3>CAD Design</h3>
       <ul>
@@ -331,15 +331,16 @@
       <button class="consult-btn">Schedule a Consultation</button>
     </div>
 
-    <form class="contact-form">
+    <form id="contactForm" class="contact-form">
       <h3>Project Enquiry</h3>
       <p>Share your project requirements and we'll get back to you.</p>
 
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Email Address">
-      <input type="text" placeholder="Phone Number">
-      <input type="text" placeholder="Company Name (Optional)">
-      <textarea placeholder="Your Message / Project Details"></textarea>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number">
+      <input type="text" name="company" placeholder="Company Name (Optional)">
+      <textarea name="message" placeholder="Your Message / Project Details" required></textarea>
+
 
       <button type="submit" class="send-btn">Send Enquiry</button>
     </form>
@@ -440,6 +441,43 @@ const observer = new IntersectionObserver(entries => {
 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: this.name.value,
+    email: this.email.value,
+    phone: this.phone.value,
+    company: this.company.value,
+    message: this.message.value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbwmCAatjSauQtZUJtfgJPwQZS8BFbQvbOTHtVoB16mEj66AFRsgfsw4PS-Hyt9Ehurh/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("Enquiry submitted successfully!");
+    this.reset();
+  })
+  .catch(() => alert("Submission failed. Try again."));
+});
+
 </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <span>© 2025 Chemenmech LLP.</span>
+
+    <div class="footer-credit">
+      <span>Designed and Developed</span>
+      <span>by Nandinee Thakre</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
