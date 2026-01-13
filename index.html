@@ -44,7 +44,7 @@
 
   </nav>
 </header>
-
+<div class="content-wrapper">
 <!-- PLACEHOLDER -->
 <section id="about" class="section reveal">
   <h2>About Us & Team</h2>
@@ -323,12 +323,11 @@
     
     <div class="contact-info">
       <h3>Get In Touch</h3>
-      <p>📧 contact@chemenmech.com</p>
-      <p>📞 +1 (555) 123-4567</p>
-      <p>📍 Chennai, India</p>
+      <p>📧 chemenmech@gmail.com</p>
+      <p>📞 +91 98678 05352</p>
+      <p>📍 Mumbai, India</p>
       <p>🌐 www.chemenmech.com</p>
 
-      <button class="consult-btn">Schedule a Consultation</button>
     </div>
 
     <form id="contactForm" class="contact-form">
@@ -348,6 +347,8 @@
   </div>
 </section>
 </div>
+
+</div>
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">×</span>
@@ -359,7 +360,6 @@
     </div>
   </div>
 </div>
-
 <script>
 console.log("JS LOADED");
 
@@ -378,6 +378,7 @@ function scrollToMain() {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
   }, 600);
 }
+
 let transitionDone = false;
 
 function triggerTransition() {

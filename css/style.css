@@ -563,7 +563,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 730px;
+  height: 100vh;
   background: linear-gradient(90deg,  #2b3f5c, #0b1220);
   display: flex;
   align-items: center;
@@ -591,9 +591,9 @@ html {
 
 
 .mini-logo {
-   height: 620px;
-   width: 620px;
-   border-radius: 32px;   
+   width: min(70vw, 620px);
+  height: auto;
+   border-radius:20px;   
    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
@@ -680,5 +680,13 @@ html {
   .footer-credit {
     text-align: center;
   }
+}
+.content-wrapper {
+  max-width: 1200px;
+  margin: 80px auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+  padding: 40px 20px;
 }
 
