@@ -68,7 +68,7 @@ html {
 .hero-logo {
   width: 120px;
   margin-bottom: 20px;
-  border-radius: 25px;   
+  border-radius: 15px;   
    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
@@ -111,10 +111,10 @@ html {
 }
 
 #navbar a {
-  color: white;
+  color: rgb(218, 232, 255);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 510;
+  font-size: 14px;
 }
 
 
@@ -154,7 +154,7 @@ html {
 }
 
 .team-card {
-  background: #f2f6fb;
+  background: #f3f8ff; 
   border-radius: 14px;
   padding: 30px 20px;
   text-align: center;
@@ -182,7 +182,7 @@ html {
 
 .team-card span {
   color: #3b5f8a;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* MODAL */
@@ -206,7 +206,24 @@ html {
   max-width: 800px;
   position: relative; /* 🔥 REQUIRED for close button */
 }
+/* TEXT */
+.modal-content h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
+  color: #0f172a;
+}
 
+.modal-content h4 {
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 15px;
+}
 .modal-content img {
   width: 220px;
   height: 220px;
@@ -220,6 +237,18 @@ html {
   top: 20px;
   font-size: 28px;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .modal-content img {
+    margin: 0 auto;
+  }
 }
 
 /* PATENTS */
@@ -295,7 +324,7 @@ html {
   top: 20px;
   right: 20px;
   padding: 6px 14px;
-  font-size: 12px;
+  font-size: 11px;
   border-radius: 20px;
   color: white;
   font-weight: bold;
@@ -306,7 +335,7 @@ html {
 }
 
 .badge.pending {
-  background: #f6a82f;
+  background: #ef9629;
 }
 
 .impact {
@@ -316,7 +345,7 @@ html {
   border-left: 4px solid #2f7cf6;
    border-radius: 8px;
   font-size: 14px;
-  color: #1e3a8a;
+  color: #1e3576;
 }
 /* EXPERTISE */
 .expertise-grid {
@@ -327,7 +356,7 @@ html {
 }
 
 .expertise-card {
-  background: #f7f9fc;
+  background: #f3f8ff;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
@@ -340,7 +369,7 @@ html {
 }
 
 .expertise-card h3 {
-  color: #2f7cf6;
+  color: #184691;
   margin-bottom: 15px;
 }
 
@@ -350,6 +379,10 @@ html {
 
 .expertise-card li {
   margin-bottom: 8px;
+}
+.expertise-card li::marker {
+  color: #3b82f6;
+  font-size: 1.2em;
 }
 /* CONTACT SECTION */
 #contact h2 {
@@ -382,7 +415,7 @@ html {
 
 .contact-info p {
   margin: 12px 0;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .consult-btn {
@@ -463,7 +496,7 @@ html {
 }
 
 .facility-image img {
-  width: 80%;
+  width: 70%;
   max-width: 900px;
   border-radius: 16px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
@@ -486,6 +519,7 @@ html {
 .facility-card {
   padding: 30px;
   border-radius: 16px;
+  transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
@@ -497,19 +531,32 @@ html {
 .facility-card.blue {
   background: #f3f8ff;
 }
+.facility-card.blue li::marker {
+  color: #397dea;
+  font-size: 1.2em;
+}
 
 .facility-card.green {
   background: #f4fff7;
 }
-
+.facility-card.green li::marker {
+  color: #118e3f;
+  font-size: 1.2em;
+}
 .facility-card.purple {
   background: #f8f5ff;
 }
-
+.facility-card.purple li::marker {
+  color: #7046d4;
+  font-size: 1.2em;
+}
 .facility-card.orange {
   background: #fff6ed;
 }
-
+.facility-card.orange li::marker {
+  color: #da630e;
+  font-size: 1.2em;
+}
 .facility-card ul {
   padding-left: 20px;
 }
@@ -652,7 +699,7 @@ html {
 /* FOOTER */
 .site-footer {
   background: radial-gradient(circle at top, #2b3f5c, #0b1220); /* Same as hero */
-  color: white;
+  color: rgb(230, 233, 237);
   padding: 18px 40px;
   margin-top: 80px;
 }
@@ -666,9 +713,9 @@ html {
 
 .footer-credit {
   text-align: right;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.4;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 @media (max-width: 600px) {
   .footer-content {
